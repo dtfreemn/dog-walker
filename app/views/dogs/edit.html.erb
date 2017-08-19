@@ -1,0 +1,21 @@
+<%= form_for @dog do |f| %>
+
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+
+<%= f.label :age %><br>
+<%= f.number_field :age %><br>
+
+<%= f.collection_select :breed_id, Breed.all, :id, :name %><br><br>
+
+<%= f.fields_for :image do |image| %>
+	File name of profile picture <%= image.text_field :url %>
+<% end %>
+
+<%= f.submit %>
+
+<% end %>
+
+<%= form_tag dog_path(@dog), method: 'delete' do %>
+	<%= submit_tag "Delete #{@dog.name}"%>
+<% end %>

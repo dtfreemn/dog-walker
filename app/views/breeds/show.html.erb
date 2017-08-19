@@ -1,0 +1,21 @@
+<div class="container">
+<h1><%= @breed.name %></h1>
+<% if @user.admin == true %>
+| <%= link_to "Edit This Breed", edit_breed_path(@breed) %>
+<% end %>
+
+<h3><%= "Here are all of our #{@breed.name.pluralize}:" %></h3>
+
+	<div class="row text-center text-lg-left">
+		<% @dogs.each do |dog| %>
+			<div class="col-lg-3 col-md-4 col-xs-6">
+				<%= image_tag dog.image.url, class: "img-fluid img-thumbnail", :style => 'height: 200px' %><br>
+				<h3><%= dog.name %></h3>
+				<h4><%= dog.breed.name %></h4>
+				<hr>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+

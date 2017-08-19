@@ -1,0 +1,12 @@
+<%= form_for @breed do |f| %>
+
+	<%= f.label :name, "What is the name of the breed?" %>
+	<%= f.text_field :name %>
+
+	<%= f.submit %>
+
+<% end %>
+
+<%= form_tag delete_breed_path(@breed), method: 'delete' do %>
+	<%= submit_tag "Delete This Breed" %>
+<% end %>

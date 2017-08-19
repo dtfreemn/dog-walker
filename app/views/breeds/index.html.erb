@@ -1,0 +1,10 @@
+<ul>
+<% @breeds.each do |breed| %>
+	<li>
+	<h2><%= link_to "#{breed.name}", breed_path(breed) %></h2>
+	<% if @user.admin == true %>
+	<%= button_to "Edit", edit_breed_path(breed), method: 'get' %>
+	<% end %>
+	</li>
+<% end %>
+</ul>

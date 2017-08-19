@@ -1,0 +1,10 @@
+<div class="container">
+	<% if @dog.image %>
+			<%= image_tag @dog.image.url %>
+	<% end %>
+	<div class="text-center">
+		<h1><%= @dog.name %></h1>
+		<h3><%= @dog.breed.name %></h3><br>
+		<%= link_to "Edit #{@dog.name}", edit_dog_path(@dog) %>
+	</div>	
+</div>

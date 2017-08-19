@@ -1,0 +1,24 @@
+<%= form_for @user do |f| %>
+
+<%= f.label :username %><br>
+<%= f.text_field :username %><br>
+
+<%= f.label :first_name %><br>
+<%= f.text_field :first_name %><br>
+
+<%= f.label :last_name %><br>
+<%= f.text_field :last_name %><br>
+
+<%= f.label :happiness, "How happy are you? (1-10 scale)" %><br>
+<%= f.number_field :happiness %><br>
+
+<%= f.label	:health, "How healthy are you? (1-10 scale)" %><br>
+<%= f.number_field :health %><br>
+
+<%= f.submit %>
+
+<% end %>
+
+<%= form_tag user_path(@user), method: 'delete' do %>
+	<%= submit_tag "Delete Tim" %>
+	<% end %>
