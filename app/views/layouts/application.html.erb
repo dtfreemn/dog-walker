@@ -25,7 +25,7 @@
       <% else %>
         <span class="navbar-brand btn"><%= "Welcome, #{User.find_by(id: session[:user_id]).first_name}!" %></span>
         <%= link_to "Log Out", log_out_path, method: 'delete', class: "navbar-brand btn navbar-right" %>
-        <%= link_to "See All of Dog Breeds", breeds_path, class: "navbar-brand btn" %>
+        <%= link_to "See All of Our Dog Breeds", breeds_path, class: "navbar-brand btn" %>
         <%= link_to "See All of Our Dogs", dogs_path, class: "navbar-brand btn" %>
       <% end %>
 		</div>
